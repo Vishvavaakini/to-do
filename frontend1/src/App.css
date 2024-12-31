@@ -1,0 +1,189 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Form Styles */
+form {
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  animation: slideIn 1s ease-out;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeIn 1.5s ease-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Task List Styles */
+.task {
+  background-color: #ffffff;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.task.completed {
+  background-color: #e8f5e9;
+  color: #388e3c;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.task h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #333;
+}
+
+.task p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+.task button {
+  background-color: #ff5252;
+  margin: 5px;
+}
+
+.task button.complete-btn {
+  background-color: #4caf50;
+}
+
+/* Button Hover Effects */
+.task button:hover {
+  opacity: 0.8;
+}
+
+.task button.complete-btn:hover {
+  opacity: 0.8;
+}
+
+.task button i {
+  margin-right: 8px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    background-color: #e8f5e9;
+  }
+  50% {
+    transform: scale(1.02);
+    background-color: #dcedc8;
+  }
+  100% {
+    transform: scale(1);
+    background-color: #e8f5e9;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .task {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task button {
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .task h3 {
+    font-size: 1.2rem;
+  }
+
+  .task p {
+    font-size: 0.9rem;
+  }
+}
